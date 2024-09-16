@@ -1,5 +1,10 @@
+import { useState } from "react"
+    
 function App() {
-  
+  const [uppercase, setUppercase] = useState(false)
+  const [lowercash, setLowercash] = useState(false)
+  const [number, setNumber] = useState(false)
+  const [sumbol, setSumbol] = useState(false)
 
   return (
     <div className="bg-slate-700 w-screen h-screen flex justify-center items-center p-4">
@@ -25,7 +30,7 @@ function App() {
               <label className="text-white/80 text-xl font-semibold">Upper Cash</label>
               <div className="flex gap-8 items-center">
                 <p className="bg-gray-500 px-2 rounded-md">ABCD</p>
-                <input type="checkbox" className="max-w-16 border-none outline-none rounded-sm bg-gray-500 p-1 " />
+                <input type="checkbox"  checked={uppercase} onChange={() => setUppercase(!uppercase)}  />
               </div>
             </div>
 
@@ -34,16 +39,16 @@ function App() {
               <label className="text-white/80 text-xl font-semibold">Lower Cash</label>
               <div className="flex gap-8 items-center">
                 <p className="bg-gray-500 px-2 rounded-md">abcd</p>
-                <input type="checkbox" className="max-w-16 border-none outline-none rounded-sm bg-gray-500 p-1" />
+                <input type="checkbox" checked={lowercash} onChange={() => setLowercash(!lowercash)}  />
               </div>
-            </div>
+            </div> 
 
             {/* Number Cash */}
             <div className="flex  justify-between mt-6">
               <label className="text-white/80 text-xl font-semibold">Number</label>
               <div className="flex gap-8 items-center">
                 <p className="bg-gray-500 px-2 rounded-md">1234</p>
-                <input type="checkbox" className="max-w-16 border-none outline-none rounded-sm bg-gray-500 p-1" />
+                <input type="checkbox" checked={number} onChange={() => setNumber(!number)}  />
               </div>
             </div>
 
@@ -52,7 +57,7 @@ function App() {
               <label className="text-white/80 text-xl font-semibold">Sumbol</label>
               <div className="flex gap-8 items-center">
                 <p className="bg-gray-500 px-2 rounded-md">!@#*?&</p>
-                <input type="checkbox" className="max-w-16 border-none outline-none rounded-sm bg-gray-500 p-1" />
+                <input type="checkbox" checked={sumbol} onChange={() => setSumbol(!sumbol)}  />
               </div>
             </div>
 
